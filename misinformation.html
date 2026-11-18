@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Peng Li — language, meaning, and computation. From Data Science and NLP toward computational linguistics and linguistic representation in LLMs.">
+  <title>Linguistic markers of misinformation — Peng Li</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="wordmark" href="index.html">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="current-work.html">Current work</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="writing.html">Writing</a>
+<a href="about.html">About / CV</a></nav>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="cv.html">CV overview</a></div>
+  </aside>
+  <main id="main"><h1>Linguistic markers of misinformation</h1>
+<p class="dek">Political news and statements · DSAN5000 · Fall 2024</p>
+<p>A collaborative course project with Jonah Lichtenthal, exploring whether lexical patterns, syntactic features, and sentiment help distinguish misinformation from credible political content.</p>
+<p><a href="https://github.com/dsan-5000/project-5000-identify-misinformation">Project repository</a> · <a href="https://github.com/dsan-5000/project-5000-identify-misinformation/blob/main/report/report.qmd">Project report</a></p>
+<section><h2>Data and methods</h2><p>The project combines exploratory analysis of political news with supervised analysis of the LIAR dataset of fact-checked short statements. Data collection also explored News API, Media Cloud, and the All the News dataset.</p><ul><li><strong>Classification:</strong> TF-IDF lexical features and a Random Forest classifier for LIAR’s six truthfulness categories.</li><li><strong>Linguistic analysis:</strong> part-of-speech counts and lexical feature importance.</li><li><strong>Sentiment:</strong> VADER and a DistilBERT-based sentiment pipeline, examined across truthfulness categories.</li><li><strong>Exploratory structure:</strong> topic modeling and dimensionality reduction, including NMF and t-SNE.</li></ul><p>DistilBERT was used for sentiment analysis, not as a directly compared misinformation classifier.</p></section>
+<section><h2>My contribution</h2><p>My work included data collection and configurable news-gathering functions, supervised learning, sentiment analysis, and exploratory analysis. I also contributed the report’s supervised learning, results and analysis, and conclusion sections, and organized the project website.</p></section>
+<section><h2>Results and limitations</h2><p>The project report records approximately 23% accuracy and a macro F1 of 0.22 for the six-class Random Forest evaluation on 3,072 test statements. These are the original reported results, not a newly reproduced benchmark.</p><p>The modest performance makes the limits of surface linguistic cues central to the project. Patterns associated with dataset labels do not establish whether an unfamiliar claim is true, and results on short fact-checked statements do not demonstrate generalization to full news articles.</p></section>
+<section><h2>Connection to my research interests</h2><p>The project connects my Data Science and NLP background to questions about what linguistic features capture—and what they leave out. It motivates closer attention to the distinction between textual patterns, meaning, and the evidence needed to support an interpretation.</p></section>
+<p><a href="projects.html">← Selected projects</a></p></main>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>

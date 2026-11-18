@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Peng Li — language, meaning, and computation. From Data Science and NLP toward computational linguistics and linguistic representation in LLMs.">
+  <title>Current work — Peng Li</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="wordmark" href="index.html">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="current-work.html" aria-current="page">Current work</a>
+<a href="projects.html">Projects</a>
+<a href="writing.html">Writing</a>
+<a href="about.html">About / CV</a></nav>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="cv.html">CV overview</a></div>
+  </aside>
+  <main id="main"><h1>Scope ambiguity in LLMs</h1><p class="dek">Ongoing work · Linguistic interpretation and evaluation</p><p>How do large language models resolve sentences with more than one possible scope interpretation? I am examining this question at the intersection of formal semantics, computational linguistics, and psycholinguistics.</p>
+<section><h2>The question</h2><div class="example"><p>Every student read a book.</p><p class="quiet">Did the students read one shared book, or could each have read a different one?</p></div><p>The broader question is how structure and context affect the reading a model selects. Cross-linguistic comparison is a further direction: corresponding sentences need not support the same readings or preferences.</p></section>
+<section><h2>Working approach</h2><p>I am developing a framework for making interpretation choices explicit, separating a reading’s availability from a preference for that reading. The evaluation design needs to account for sentence form, supporting context, and the way a question is presented to the model.</p><ul><li>Specify the readings and the contrasts each example is meant to test.</li><li>Distinguish contextual effects from effects of prompting and response format.</li><li>Relate model outputs to linguistic analyses and, where appropriate, human judgment tasks.</li></ul></section>
+<section><h2>Current stage</h2><p>This is ongoing work. The public material currently consists of a research sketch and questions guiding the design; no benchmark results or completed human study are presented here.</p><p><a href="quantifier-scope.html">Read the research sketch →</a></p></section></main>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
