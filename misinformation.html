@@ -13,31 +13,89 @@
   <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="layout">
-  <aside class="sidebar">
-    <a class="wordmark" href="index.html">Peng Li</a>
-    <nav aria-label="Main navigation"><a href="index.html">Home</a>
-<a href="research.html">Research</a>
+<div class="page">
+  <header class="masthead">
+    <a class="name" href="index.html">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="research.html">Research</a>
 <a href="projects.html" aria-current="page">Projects</a>
 <a href="writing.html">Writing</a>
 <a href="cv.html">CV</a></nav>
-    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
-  </aside>
+  </header>
   <main id="main">
-<h1>Linguistic markers of misinformation</h1>
-<p class="dek">Political news and statements · DSAN 5000 · Fall 2024</p>
-<p>A collaborative course project with Jonah Lichtenthal, exploring whether lexical patterns, syntactic features, and sentiment help distinguish misinformation from credible political content.</p>
-<p class="links"><a href="https://github.com/dsan-5000/project-5000-identify-misinformation">Repository</a><a href="https://github.com/dsan-5000/project-5000-identify-misinformation/blob/main/report/report.qmd">Project report</a><a href="http://pengli.georgetown.domains/proj5000">Project website</a></p>
-<section><h2>Data and methods</h2><p>The project combines exploratory analysis of political news with supervised analysis of the LIAR dataset of fact-checked short statements. Data collection also explored News API, Media Cloud, and the All the News dataset.</p><ul><li><strong>Classification:</strong> TF-IDF lexical features and a Random Forest classifier for LIAR’s six truthfulness categories.</li><li><strong>Linguistic analysis:</strong> part-of-speech counts and lexical feature importance.</li><li><strong>Sentiment:</strong> VADER and a DistilBERT-based sentiment pipeline, examined across truthfulness categories.</li><li><strong>Exploratory structure:</strong> topic modeling and dimensionality reduction, including NMF and t-SNE.</li></ul><p>DistilBERT was used for sentiment analysis, not as a directly compared misinformation classifier.</p></section>
-<section><h2>My contribution</h2><p>My work included data collection and configurable news-gathering functions, supervised learning, sentiment analysis, and exploratory analysis. I also contributed the report’s supervised learning, results and analysis, and conclusion sections, and organized the project website.</p></section>
-<section><h2>Results and limitations</h2><p>The project report records approximately 23% accuracy and a macro F1 of 0.22 for the six-class Random Forest evaluation on 3,072 test statements. These are the originally reported results, not a newly reproduced benchmark.</p><p>The modest performance makes the limits of surface linguistic cues central to the project. Patterns associated with dataset labels do not establish whether an unfamiliar claim is true, and results on short fact-checked statements do not demonstrate generalization to full news articles.</p></section>
-<section><h2>What it led to</h2><p>The project sharpened a question I now pursue directly: what a measurable textual pattern shows about meaning, and what further evidence an interpretation needs.</p></section>
-<p><a href="projects.html">← Projects</a></p>
+<div class="intro">
+      <p class="kicker">Course project · Fall 2024</p>
+      <div class="lede">
+        <h1>Linguistic markers of misinformation</h1>
+        <p class="dek">Do lexical patterns, syntactic features, and sentiment help distinguish misinformation from credible political content?</p>
+        
+      </div>
+    </div>
+
+    <section class="row">
+      <h2 class="label">Overview</h2>
+      <div class="body">
+        <dl class="facts">
+          <dt>Course</dt><dd>DSAN 5000, Fall 2024</dd>
+          <dt>With</dt><dd>Jonah Lichtenthal</dd>
+          <dt>Data</dt><dd>The LIAR dataset of fact-checked short statements; exploratory collection via News API, Media Cloud, and the All the News dataset</dd>
+          <dt>Materials</dt><dd><p class="links"><a href="https://github.com/dsan-5000/project-5000-identify-misinformation">Repository</a><a href="https://github.com/dsan-5000/project-5000-identify-misinformation/blob/main/report/report.qmd">Project report</a><a href="http://pengli.georgetown.domains/proj5000">Project website</a></p></dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">Methods</h2>
+      <div class="body">
+        <ul>
+          <li><strong>Classification</strong> — TF-IDF lexical features and a Random Forest classifier for LIAR’s six truthfulness categories.</li>
+          <li><strong>Linguistic analysis</strong> — part-of-speech counts and lexical feature importance.</li>
+          <li><strong>Sentiment</strong> — VADER and a DistilBERT-based sentiment pipeline, examined across truthfulness categories.</li>
+          <li><strong>Exploratory structure</strong> — topic modeling and dimensionality reduction, including NMF and t-SNE.</li>
+        </ul>
+        <p>DistilBERT was used for sentiment analysis, not as a directly compared misinformation classifier.</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">Results and limitations</h2>
+      <div class="body">
+        <div class="figures">
+          <div><b>≈ 23%</b><span>accuracy</span></div>
+          <div><b>0.22</b><span>macro F1</span></div>
+          <div><b>3,072</b><span>test statements</span></div>
+          <div><b>6</b><span>classes</span></div>
+        </div>
+        <p>These are the results recorded in the project report for the six-class Random Forest evaluation — the originally reported results, not a newly reproduced benchmark.</p>
+        <p>The modest performance makes the limits of surface linguistic cues central to the project. Patterns associated with dataset labels do not establish whether an unfamiliar claim is true, and results on short fact-checked statements do not demonstrate generalization to full news articles.</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">My contribution</h2>
+      <div class="body">
+        <p>My work included data collection and configurable news-gathering functions, supervised learning, sentiment analysis, and exploratory analysis. I also contributed the report’s supervised learning, results and analysis, and conclusion sections, and organized the project website.</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">What it led to</h2>
+      <div class="body">
+        <p>The project sharpened a question I now pursue directly: what a measurable textual pattern shows about meaning, and what further evidence an interpretation needs.</p>
+        <p class="back"><a href="projects.html">← Projects</a></p>
+      </div>
+    </section>
   </main>
+  <footer class="colophon">
+    <p>Peng Li · Language, meaning, and computation</p>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
+  </footer>
 </div>
 <script src="script.js" defer></script>
 </body>

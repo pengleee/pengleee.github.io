@@ -13,53 +13,88 @@
   <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Peng Li", "url": "https://pengleee.github.io/", "image": "https://pengleee.github.io/assets/peng-li.jpeg", "email": "mailto:pengleee@outlook.com", "description": "Research in formal semantics, pragmatics, psycholinguistics, and the linguistic evaluation of language models.", "alumniOf": {"@type": "CollegeOrUniversity", "name": "The Chinese University of Hong Kong, Shenzhen"}, "knowsAbout": ["Formal semantics", "Pragmatics", "Psycholinguistics", "Computational linguistics", "Quantifier scope"], "sameAs": ["https://github.com/pengleee", "https://orcid.org/0009-0001-5334-7118", "https://www.linkedin.com/in/pengleee"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="layout">
-  <aside class="sidebar">
-    <a class="wordmark" href="index.html">Peng Li</a>
-    <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a>
-<a href="research.html">Research</a>
+<div class="page">
+  <header class="masthead">
+    <a class="name" href="index.html" aria-current="page">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="research.html">Research</a>
 <a href="projects.html">Projects</a>
 <a href="writing.html">Writing</a>
 <a href="cv.html">CV</a></nav>
-    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
-  </aside>
+  </header>
   <main id="main">
-<img class="profile-photo" src="assets/peng-li.jpeg" alt="Portrait of Peng Li outdoors" width="180" height="180">
-<h1>Peng Li</h1>
-<p class="dek">Language, meaning, and computation.</p>
-<div class="bio">
-<p>I work on formal semantics, pragmatics, and psycholinguistics, and on how the methods of these fields can be used to evaluate language models. My current project asks how discourse context shifts the interpretation of quantifier-scope ambiguity — sentences like <em>Every kid climbed a tree</em>, which can describe one tree or several.</p>
-<p>I hold a B.S. in Data Science and Big Data Technology from The Chinese University of Hong Kong, Shenzhen (2024), with visiting study at the University of Bristol and an ACP certificate in Data Science from UC Irvine. From August 2024 to February 2026 I took graduate coursework in Data Science and Analytics at Georgetown University, including computational linguistics and NLP, and was a teaching assistant for Advanced NLP.</p>
-</div>
+<div class="intro">
+      <div><img class="portrait" src="assets/peng-li.jpeg" alt="Portrait of Peng Li outdoors" width="152" height="152"></div>
+      <div class="lede">
+        <h1>Peng Li</h1>
+        <p class="dek">Language, meaning, and computation.</p>
+        <div class="bio">
+          <p>I work on formal semantics, pragmatics, and psycholinguistics, and on how the methods of these fields can be used to evaluate language models. My current project asks how discourse context shifts the interpretation of quantifier-scope ambiguity — sentences like <em>Every kid climbed a tree</em>, which can describe one tree or several.</p>
+          <p>I hold a B.S. in Data Science and Big Data Technology from The Chinese University of Hong Kong, Shenzhen (2024), with visiting study at the University of Bristol and an ACP certificate in Data Science from UC Irvine. From August 2024 to February 2026 I took graduate coursework in Data Science and Analytics at Georgetown University, including computational linguistics and NLP, and was a teaching assistant for Advanced NLP.</p></div>
+      </div>
+    </div>
 
-<section>
-<h2>Current research</h2>
-<article class="item">
-<h3><a href="scopeshift.html">ScopeShift: preceding questions and scope-ambiguous sentences</a></h3>
-<p class="meta">Independent research · July 2026 – present · manuscript in preparation</p>
-<p>Holding <em>Every kid climbed a tree</em> constant, I vary the question it answers and measure whether a language model expects the next sentence to mention <em>the tree</em> or <em>the trees</em>. In a frozen confirmation study with 120 new items and three open-weight models, a question about a shared object shifted the expectation toward the singular in every model, by a seventh to a third of the effect of stating the number outright. What the shift says about scope assignment itself is left open.</p>
-</article>
-</section>
+    <section class="row">
+      <h2 class="label">Current research</h2>
+      <div class="body">
+        <h3><a href="scopeshift.html">ScopeShift: preceding questions and scope-ambiguous sentences</a></h3>
+        <p class="meta"><span class="status">Manuscript in preparation</span> · Independent research · July 2026 – present</p>
 
-<section>
-<div class="section-heading"><h2>Course projects</h2><a href="projects.html">All projects →</a></div>
-<article class="item"><h3><a href="rag.html">End-to-end retrieval-augmented generation</a></h3><p>A three-person team system for document-grounded question answering: dense retrieval with FAISS, cross-encoder reranking, document upload, and source attribution. Advanced NLP, Fall 2024.</p></article>
-<article class="item"><h3><a href="misinformation.html">Linguistic markers of misinformation</a></h3><p>Lexical, syntactic, and sentiment features of fact-checked political statements, and why surface cues classify them poorly. Data Science and Analytics, Fall 2024.</p></article>
-</section>
+        <div class="ex">
+          <p class="sentence"><span class="num">(1)</span>Every kid climbed a tree.</p>
+          <dl class="readings">
+            <dt>every &gt; a</dt>
+            <dd><em>Surface scope.</em> Each kid climbed some tree, possibly a different one.<span class="lf">∀x[kid(x) → ∃y[tree(y) ∧ climb(x, y)]]</span></dd>
+            <dt>a &gt; every</dt>
+            <dd><em>Inverse scope.</em> There is one tree that every kid climbed.<span class="lf">∃y[tree(y) ∧ ∀x[kid(x) → climb(x, y)]]</span></dd>
+          </dl>
+        </div>
+        <p>Holding <em>Every kid climbed a tree</em> constant, I vary the question it answers and measure whether a language model expects the next sentence to mention <em>the tree</em> or <em>the trees</em>. In a frozen confirmation study with 120 new items and three open-weight models, a question about a shared object shifted the expectation toward the singular in every model, by a seventh to a third of the effect of stating the number outright. What the shift says about scope assignment itself is left open.</p>
+        <p class="more"><a href="scopeshift.html">Design, results, and limits →</a></p>
+      </div>
+    </section>
 
-<section>
-<div class="section-heading"><h2>Writing</h2><a href="writing.html">All writing →</a></div>
-<ul class="refs">
-<li><a href="quantifier-scope.html">Quantifier scope across languages</a> <span class="meta">· research sketch</span></li>
-<li><a href="between-languages.html">Moving between languages</a> <span class="meta">· essay</span></li>
-</ul>
-</section>
+    <section class="row">
+      <h2 class="label">Course projects</h2>
+      <div class="body">
+        <ul class="entries">
+          <li class="entry">
+            <h3><a href="rag.html">End-to-end retrieval-augmented generation</a></h3>
+            <p class="meta">Advanced NLP · Fall 2024 · team of three</p>
+            <p>A system for document-grounded question answering: dense retrieval with FAISS, cross-encoder reranking, document upload, and source attribution.</p>
+          </li>
+          <li class="entry">
+            <h3><a href="misinformation.html">Linguistic markers of misinformation</a></h3>
+            <p class="meta">Data Science and Analytics · Fall 2024 · with Jonah Lichtenthal</p>
+            <p>Lexical, syntactic, and sentiment features of fact-checked political statements, and why surface cues classify them poorly.</p>
+          </li>
+        </ul>
+        <p class="more"><a href="projects.html">All projects →</a></p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">Writing</h2>
+      <div class="body">
+        <ul class="index">
+          <li><a href="quantifier-scope.html">Quantifier scope across languages</a><span>Research sketch</span></li>
+          <li><a href="between-languages.html">Moving between languages</a><span>Essay</span></li>
+        </ul>
+        <p class="more"><a href="writing.html">All writing →</a></p>
+      </div>
+    </section>
   </main>
+  <footer class="colophon">
+    <p>Peng Li · Language, meaning, and computation</p>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
+  </footer>
 </div>
 <script src="script.js" defer></script>
 </body>

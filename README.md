@@ -13,7 +13,9 @@ Personal academic website of Peng Li. Plain HTML and one stylesheet, served by G
 | `cv.html`, `assets/Peng_Li_CV.pdf` | CV (HTML) and its printed PDF |
 | `about.html`, `current-work.html`, `life.html` | Redirects kept for old links |
 
-Every page repeats the same sidebar. When adding or renaming a page, update the sidebar on every page, `sitemap.xml`, and the page's own `description` and `canonical` tags; the tests check all of these.
+Design: one typeface (Source Serif 4 via Google Fonts, system-serif fallback), one accent colour, and a margin-label grid (`.intro`, `.row` > `.label` + `.body`) that stacks below 760px; light, dark, and print styles live in `styles.css`.
+
+Every page repeats the same masthead (`<nav aria-label="Main navigation">`) and footer (`<div class="contact">`). When adding or renaming a page, update both on every page, `sitemap.xml`, and the page's own `description` and `canonical` tags; the tests check all of these.
 
 ## Preview and checks
 

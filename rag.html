@@ -13,43 +13,67 @@
   <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="layout">
-  <aside class="sidebar">
-    <a class="wordmark" href="index.html">Peng Li</a>
-    <nav aria-label="Main navigation"><a href="index.html">Home</a>
-<a href="research.html">Research</a>
+<div class="page">
+  <header class="masthead">
+    <a class="name" href="index.html">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="research.html">Research</a>
 <a href="projects.html" aria-current="page">Projects</a>
 <a href="writing.html">Writing</a>
 <a href="cv.html">CV</a></nav>
-    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
-  </aside>
+  </header>
   <main id="main">
-<h1>End-to-end retrieval-augmented generation</h1>
-<p class="dek">DSAN 5800 Advanced NLP · Georgetown University · Fall 2024</p>
-<p>A team project with Yuting Fan and Yiwei Qi: a web application that answers questions from a user's own documents and shows which documents each answer draws on.</p>
-<p class="links"><a href="https://github.com/pengleee/Project-5800-RAG-2024Fall">Repository</a><a href="https://github.com/pengleee/Project-5800-RAG-2024Fall/blob/main/report/report.qmd">Project report</a></p>
+<div class="intro">
+      <p class="kicker">Course project · Fall 2024</p>
+      <div class="lede">
+        <h1>End-to-end retrieval-augmented generation</h1>
+        <p class="dek">A web application that answers questions from a user’s own documents and shows which documents each answer draws on.</p>
+        
+      </div>
+    </div>
 
-<section>
-<h2>System</h2>
-<ul>
-<li><strong>Retrieval:</strong> documents and queries embedded with SentenceTransformers (all-MiniLM-L6-v2) and searched with a flat FAISS index.</li>
-<li><strong>Reranking:</strong> candidates reordered by a cross-encoder (ms-marco-MiniLM-L-12-v2).</li>
-<li><strong>Generation:</strong> retrieved passages concatenated with the query and passed to an OpenAI chat model chosen by the user.</li>
-<li><strong>Interface:</strong> Streamlit chat with document upload, immediate indexing of new documents, and source attribution for each answer.</li>
-</ul>
-</section>
+    <section class="row">
+      <h2 class="label">Overview</h2>
+      <div class="body">
+        <dl class="facts">
+          <dt>Course</dt><dd>DSAN 5800 Advanced NLP, Georgetown University, Fall 2024</dd>
+          <dt>Team</dt><dd>With Yuting Fan and Yiwei Qi</dd>
+          <dt>Materials</dt><dd><p class="links"><a href="https://github.com/pengleee/Project-5800-RAG-2024Fall">Repository</a><a href="https://github.com/pengleee/Project-5800-RAG-2024Fall/blob/main/report/report.qmd">Project report</a></p></dd>
+        </dl>
+      </div>
+    </section>
 
-<section>
-<h2>Evaluation and its limits</h2>
-<p>The team tested robustness — file types, file sizes up to memory limits, empty and corrupted files, invalid queries — and compared two generation models by manual inspection of accuracy and relevance. Retrieval quality was not measured against labelled relevance judgments, and answer faithfulness to the retrieved evidence was not scored separately.</p>
-<p>Those two gaps are what I would address next: compare embedding retrieval with a lexical baseline such as BM25 on labelled queries, and check whether each claim in an answer is supported by a retrieved passage. Fluent output alone does not show that either stage worked.</p>
-</section>
-<p><a href="projects.html">← Projects</a></p>
+    <section class="row">
+      <h2 class="label">System</h2>
+      <div class="body">
+        <ul>
+          <li><strong>Retrieval</strong> — documents and queries embedded with SentenceTransformers (all-MiniLM-L6-v2) and searched with a flat FAISS index.</li>
+          <li><strong>Reranking</strong> — candidates reordered by a cross-encoder (ms-marco-MiniLM-L-12-v2).</li>
+          <li><strong>Generation</strong> — retrieved passages concatenated with the query and passed to an OpenAI chat model chosen by the user.</li>
+          <li><strong>Interface</strong> — Streamlit chat with document upload, immediate indexing of new documents, and source attribution for each answer.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">Evaluation and its limits</h2>
+      <div class="body">
+        <p>The team tested robustness — file types, file sizes up to memory limits, empty and corrupted files, invalid queries — and compared two generation models by manual inspection of accuracy and relevance. Retrieval quality was not measured against labelled relevance judgments, and answer faithfulness to the retrieved evidence was not scored separately.</p>
+        <p>Those two gaps are what I would address next: compare embedding retrieval with a lexical baseline such as BM25 on labelled queries, and check whether each claim in an answer is supported by a retrieved passage. Fluent output alone does not show that either stage worked.</p>
+        <p class="back"><a href="projects.html">← Projects</a></p>
+      </div>
+    </section>
   </main>
+  <footer class="colophon">
+    <p>Peng Li · Language, meaning, and computation</p>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
+  </footer>
 </div>
 <script src="script.js" defer></script>
 </body>

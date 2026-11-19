@@ -13,49 +13,75 @@
   <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="layout">
-  <aside class="sidebar">
-    <a class="wordmark" href="index.html">Peng Li</a>
-    <nav aria-label="Main navigation"><a href="index.html">Home</a>
-<a href="research.html" aria-current="page">Research</a>
+<div class="page">
+  <header class="masthead">
+    <a class="name" href="index.html">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="research.html" aria-current="page">Research</a>
 <a href="projects.html">Projects</a>
 <a href="writing.html">Writing</a>
 <a href="cv.html">CV</a></nav>
-    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
-  </aside>
+  </header>
   <main id="main">
-<h1>Research</h1>
-<p class="dek">Meaning in context, and how to measure it in language models.</p>
-<p>My interests are in formal semantics, pragmatics, computational linguistics, and psycholinguistics — in particular quantifier scope, discourse interpretation, the syntax–semantics interface, and the linguistic evaluation of language models.</p>
+<div class="intro">
+      <p class="kicker">Research</p>
+      <div class="lede">
+        <h1>Research</h1>
+        <p class="dek">Meaning in context, and how to measure it in language models.</p>
+        <div class="bio"><p>My interests are in formal semantics, pragmatics, computational linguistics, and psycholinguistics — in particular quantifier scope, discourse interpretation, the syntax–semantics interface, and the linguistic evaluation of language models.</p></div>
+      </div>
+    </div>
 
-<section>
-<h2>Current project</h2>
-<article class="item">
-<h3><a href="scopeshift.html">ScopeShift</a></h3>
-<p class="meta">Independent research · July 2026 – present</p>
-<p>Does a preceding question shift which construal of a scope-ambiguous sentence a language model expects? A pilot on 8 development items fixed the design; a frozen confirmation study on 120 new items and three models found a shift in the predicted direction in every model, together with clear limits on what the measure can show.</p>
-</article>
-</section>
+    <section class="row">
+      <h2 class="label">Current project</h2>
+      <div class="body">
+        <h3><a href="scopeshift.html">ScopeShift</a></h3>
+        <p class="meta"><span class="status">Manuscript in preparation</span> · Independent research · July 2026 – present</p>
+        <p>Does a preceding question shift which construal of a scope-ambiguous sentence a language model expects? A pilot on 8 development items fixed the design; a frozen confirmation study on 120 new items and three models found a shift in the predicted direction in every model, together with clear limits on what the measure can show.</p>
+      </div>
+    </section>
 
-<section>
-<h2>Questions behind the project</h2>
-<p><strong>Availability versus preference.</strong> When a sentence has more than one reading, the grammar may make both available while context makes one easier to reach. Experiments need to keep these apart: a task that measures whether a sentence is judged true cannot by itself say which reading was taken.</p>
-<p><strong>Discourse and the question under discussion.</strong> Question-based theories of discourse predict that a hearer prefers the reading that answers the current question. Language models are a test case: does this sensitivity show up in a system trained on text alone, and what in its output would count as evidence that it does?</p>
-<p><strong>Measures as proxies.</strong> Continuation probabilities, truth judgments, and paraphrase choices each stand in for interpretation imperfectly. Much of my work so far has been about finding where a measure breaks, and reporting that alongside the effect.</p>
-</section>
+    <section class="row">
+      <h2 class="label"><span class="n">I</span>Availability versus preference</h2>
+      <div class="body">
+        <p>When a sentence has more than one reading, the grammar may make both available while context makes one easier to reach. Experiments need to keep these apart: a task that measures whether a sentence is judged true cannot by itself say which reading was taken.</p>
+      </div>
+    </section>
 
-<section>
-<h2>Earlier work</h2>
-<ul>
-<li><a href="quantifier-scope.html">Quantifier scope across languages</a> — the research sketch that preceded ScopeShift, on English and Mandarin scope and language background.</li>
-<li><a href="misinformation.html">Linguistic markers of misinformation</a> — a course project on what surface lexical and syntactic features can and cannot capture.</li>
-</ul>
-</section>
+    <section class="row">
+      <h2 class="label"><span class="n">II</span>Discourse and the question under discussion</h2>
+      <div class="body">
+        <p>Question-based theories of discourse predict that a hearer prefers the reading that answers the current question. Language models are a test case: does this sensitivity show up in a system trained on text alone, and what in its output would count as evidence that it does?</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label"><span class="n">III</span>Measures as proxies</h2>
+      <div class="body">
+        <p>Continuation probabilities, truth judgments, and paraphrase choices each stand in for interpretation imperfectly. Much of my work so far has been about finding where a measure breaks, and reporting that alongside the effect.</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">Earlier work</h2>
+      <div class="body">
+        <ul class="entries">
+          <li class="entry"><h3><a href="quantifier-scope.html">Quantifier scope across languages</a></h3><p>The research sketch that preceded ScopeShift, on English and Mandarin scope and language background.</p></li>
+          <li class="entry"><h3><a href="misinformation.html">Linguistic markers of misinformation</a></h3><p>A course project on what surface lexical and syntactic features can and cannot capture.</p></li>
+        </ul>
+      </div>
+    </section>
   </main>
+  <footer class="colophon">
+    <p>Peng Li · Language, meaning, and computation</p>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
+  </footer>
 </div>
 <script src="script.js" defer></script>
 </body>
