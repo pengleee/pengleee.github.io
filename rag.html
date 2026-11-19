@@ -3,8 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Peng Li — language, meaning, and computation. From Data Science and NLP toward computational linguistics and linguistic representation in LLMs.">
-  <title>Semantic search &amp; RAG — Peng Li</title>
+  <title>End-to-end RAG system — Peng Li</title>
+  <meta name="description" content="An end-to-end retrieval-augmented generation system built for DSAN 5800 Advanced NLP at Georgetown University: FAISS retrieval, cross-encoder reranking, and source attribution.">
+  <link rel="canonical" href="https://pengleee.github.io/rag.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="End-to-end RAG system — Peng Li">
+  <meta property="og:description" content="An end-to-end retrieval-augmented generation system built for DSAN 5800 Advanced NLP at Georgetown University: FAISS retrieval, cross-encoder reranking, and source attribution.">
+  <meta property="og:url" content="https://pengleee.github.io/rag.html">
+  <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,13 +22,34 @@
     <a class="wordmark" href="index.html">Peng Li</a>
     <nav aria-label="Main navigation"><a href="index.html">Home</a>
 <a href="research.html">Research</a>
-<a href="current-work.html">Current work</a>
 <a href="projects.html" aria-current="page">Projects</a>
 <a href="writing.html">Writing</a>
-<a href="about.html">About / CV</a></nav>
-    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="cv.html">CV overview</a></div>
+<a href="cv.html">CV</a></nav>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
   </aside>
-  <main id="main"><h1>Semantic search &amp; RAG</h1><p class="dek">SentenceTransformers · FAISS · Information retrieval</p><p>This project focuses on semantic search and retrieval-augmented generation: representing documents for retrieval, selecting relevant evidence, and connecting that evidence to generated answers.</p><section><h2>Methodological focus</h2><p>The technical focus is sentence embeddings with SentenceTransformers and similarity search with FAISS. The questions extend beyond finding nearby vectors: what makes a retrieved passage relevant, and does it actually support the answer produced from it?</p></section><section><h2>Evaluation questions</h2><ul><li>How does embedding-based retrieval compare with a lexical baseline?</li><li>Which useful passages are missed, and which superficially similar passages are retrieved?</li><li>Can the generated answer be traced back to the retrieved evidence?</li></ul><p>Retrieval quality and answer support need separate evaluation. Fluent generation alone does not establish that either stage worked well.</p></section><p class="quiet">This page describes the project focus. It does not report a completed deployment or verified performance results.</p><p><a href="projects.html">← Selected projects</a></p></main>
+  <main id="main">
+<h1>End-to-end retrieval-augmented generation</h1>
+<p class="dek">DSAN 5800 Advanced NLP · Georgetown University · Fall 2024</p>
+<p>A team project with Yuting Fan and Yiwei Qi: a web application that answers questions from a user's own documents and shows which documents each answer draws on.</p>
+<p class="links"><a href="https://github.com/pengleee/Project-5800-RAG-2024Fall">Repository</a><a href="https://github.com/pengleee/Project-5800-RAG-2024Fall/blob/main/report/report.qmd">Project report</a></p>
+
+<section>
+<h2>System</h2>
+<ul>
+<li><strong>Retrieval:</strong> documents and queries embedded with SentenceTransformers (all-MiniLM-L6-v2) and searched with a flat FAISS index.</li>
+<li><strong>Reranking:</strong> candidates reordered by a cross-encoder (ms-marco-MiniLM-L-12-v2).</li>
+<li><strong>Generation:</strong> retrieved passages concatenated with the query and passed to an OpenAI chat model chosen by the user.</li>
+<li><strong>Interface:</strong> Streamlit chat with document upload, immediate indexing of new documents, and source attribution for each answer.</li>
+</ul>
+</section>
+
+<section>
+<h2>Evaluation and its limits</h2>
+<p>The team tested robustness — file types, file sizes up to memory limits, empty and corrupted files, invalid queries — and compared two generation models by manual inspection of accuracy and relevance. Retrieval quality was not measured against labelled relevance judgments, and answer faithfulness to the retrieved evidence was not scored separately.</p>
+<p>Those two gaps are what I would address next: compare embedding retrieval with a lexical baseline such as BM25 on labelled queries, and check whether each claim in an answer is supported by a retrieved passage. Fluent output alone does not show that either stage worked.</p>
+</section>
+<p><a href="projects.html">← Projects</a></p>
+  </main>
 </div>
 <script src="script.js" defer></script>
 </body>

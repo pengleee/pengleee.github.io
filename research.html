@@ -3,8 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Peng Li — language, meaning, and computation. From Data Science and NLP toward computational linguistics and linguistic representation in LLMs.">
   <title>Research — Peng Li</title>
+  <meta name="description" content="Research interests of Peng Li: formal semantics, pragmatics, psycholinguistics, quantifier scope, discourse interpretation, and the linguistic evaluation of language models.">
+  <link rel="canonical" href="https://pengleee.github.io/research.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Research — Peng Li">
+  <meta property="og:description" content="Research interests of Peng Li: formal semantics, pragmatics, psycholinguistics, quantifier scope, discourse interpretation, and the linguistic evaluation of language models.">
+  <meta property="og:url" content="https://pengleee.github.io/research.html">
+  <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,17 +22,40 @@
     <a class="wordmark" href="index.html">Peng Li</a>
     <nav aria-label="Main navigation"><a href="index.html">Home</a>
 <a href="research.html" aria-current="page">Research</a>
-<a href="current-work.html">Current work</a>
 <a href="projects.html">Projects</a>
 <a href="writing.html">Writing</a>
-<a href="about.html">About / CV</a></nav>
-    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="cv.html">CV overview</a></div>
+<a href="cv.html">CV</a></nav>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
   </aside>
-  <main id="main"><h1>Research</h1><p class="dek">Language structure, interpretation, and computational representation.</p><p>My interests connect questions about linguistic meaning with methods from Data Science and NLP. I am developing a research direction that brings formal accounts of language into conversation with human interpretation and the behavior of language models.</p>
-<section><h2>Meaning and structure</h2><p>Formal semantics and the syntax–semantics interface provide a starting point for asking how sentence structure constrains interpretation. I am particularly interested in quantifier scope and ambiguity: when multiple readings are available, what makes one reading more accessible than another?</p></section>
-<section><h2>Interpretation and processing</h2><p>Psycholinguistics offers a way to connect these questions with how people understand language. I am interested in the roles of context and language experience, and in how experimental tasks can distinguish possible interpretations from preferred ones.</p></section>
-<section><h2>Computational representations</h2><p>In computational linguistics and NLP, my interests include linguistic representation in LLMs, distributional semantics, and information retrieval. A recurring question is what model behavior reveals about representation—and what remains unresolved when a model produces a plausible answer.</p></section>
-<section><h2>Current focus</h2><p><a href="current-work.html">Scope ambiguity in large language models</a> brings these interests together. The work is ongoing; the current emphasis is on defining the question and evaluation design, rather than reporting established findings.</p></section></main>
+  <main id="main">
+<h1>Research</h1>
+<p class="dek">Meaning in context, and how to measure it in language models.</p>
+<p>My interests are in formal semantics, pragmatics, computational linguistics, and psycholinguistics — in particular quantifier scope, discourse interpretation, the syntax–semantics interface, and the linguistic evaluation of language models.</p>
+
+<section>
+<h2>Current project</h2>
+<article class="item">
+<h3><a href="scopeshift.html">ScopeShift</a></h3>
+<p class="meta">Independent research · July 2026 – present</p>
+<p>Does a preceding question shift which construal of a scope-ambiguous sentence a language model expects? A pilot on 8 development items fixed the design; a frozen confirmation study on 120 new items and three models found a shift in the predicted direction in every model, together with clear limits on what the measure can show.</p>
+</article>
+</section>
+
+<section>
+<h2>Questions behind the project</h2>
+<p><strong>Availability versus preference.</strong> When a sentence has more than one reading, the grammar may make both available while context makes one easier to reach. Experiments need to keep these apart: a task that measures whether a sentence is judged true cannot by itself say which reading was taken.</p>
+<p><strong>Discourse and the question under discussion.</strong> Question-based theories of discourse predict that a hearer prefers the reading that answers the current question. Language models are a test case: does this sensitivity show up in a system trained on text alone, and what in its output would count as evidence that it does?</p>
+<p><strong>Measures as proxies.</strong> Continuation probabilities, truth judgments, and paraphrase choices each stand in for interpretation imperfectly. Much of my work so far has been about finding where a measure breaks, and reporting that alongside the effect.</p>
+</section>
+
+<section>
+<h2>Earlier work</h2>
+<ul>
+<li><a href="quantifier-scope.html">Quantifier scope across languages</a> — the research sketch that preceded ScopeShift, on English and Mandarin scope and language background.</li>
+<li><a href="misinformation.html">Linguistic markers of misinformation</a> — a course project on what surface lexical and syntactic features can and cannot capture.</li>
+</ul>
+</section>
+  </main>
 </div>
 <script src="script.js" defer></script>
 </body>

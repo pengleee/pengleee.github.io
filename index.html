@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Peng Li — language, meaning, and computation. From Data Science and NLP toward computational linguistics and linguistic representation in LLMs.">
-  <title>Home — Peng Li</title>
+  <title>Peng Li</title>
+  <meta name="description" content="Peng Li works on formal semantics, pragmatics, and psycholinguistics, and on evaluating language models with linguistic methods. Current project: discourse context and quantifier scope in language models.">
+  <link rel="canonical" href="https://pengleee.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Peng Li">
+  <meta property="og:description" content="Peng Li works on formal semantics, pragmatics, and psycholinguistics, and on evaluating language models with linguistic methods. Current project: discourse context and quantifier scope in language models.">
+  <meta property="og:url" content="https://pengleee.github.io/">
+  <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="profile.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Peng Li", "url": "https://pengleee.github.io/", "image": "https://pengleee.github.io/assets/peng-li.jpeg", "email": "mailto:pengleee@outlook.com", "description": "Research in formal semantics, pragmatics, psycholinguistics, and the linguistic evaluation of language models.", "alumniOf": {"@type": "CollegeOrUniversity", "name": "The Chinese University of Hong Kong, Shenzhen"}, "knowsAbout": ["Formal semantics", "Pragmatics", "Psycholinguistics", "Computational linguistics", "Quantifier scope"], "sameAs": ["https://github.com/pengleee", "https://orcid.org/0009-0001-5334-7118", "https://www.linkedin.com/in/pengleee"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -15,17 +23,43 @@
     <a class="wordmark" href="index.html">Peng Li</a>
     <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a>
 <a href="research.html">Research</a>
-<a href="current-work.html">Current work</a>
 <a href="projects.html">Projects</a>
 <a href="writing.html">Writing</a>
-<a href="about.html">About / CV</a></nav>
-    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="cv.html">CV overview</a></div>
+<a href="cv.html">CV</a></nav>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
   </aside>
-  <main id="main"><img class="profile-photo" src="assets/peng-li.jpeg" alt="Portrait of Peng Li outdoors" width="180" height="180"><h1>Peng Li</h1><p class="dek">Language, meaning, and computation.</p><div class="bio"><p>I have a background in Data Science and NLP and am moving toward computational linguistics, formal semantics, and psycholinguistics. I am interested in how meaning is represented and interpreted by people and large language models.</p><p>I received my B.S. in Data Science and Big Data Technology from The Chinese University of Hong Kong, Shenzhen in 2024, and also studied as a visiting student at the University of California, Irvine and the University of Bristol. I undertook graduate coursework in Data Science &amp; Analytics at Georgetown University, 2024–2026.</p></div>
-<section><h2>Current research</h2><p>My ongoing work examines <a href="current-work.html">scope ambiguity in large language models</a>: how sentence structure and context shape the readings a model selects, and how to make those interpretations meaningfully comparable with human judgments.</p></section>
-<section><div class="section-heading"><h2>Selected work</h2><a href="projects.html">All projects →</a></div><article class="item"><h3><a href="current-work.html">Scope ambiguity in large language models</a></h3><p>Ongoing work on how LLMs interpret quantifier scope, and how their responses relate to linguistic structure and human interpretation.</p></article><article class="item"><h3><a href="rag.html">Semantic search &amp; retrieval-augmented generation</a></h3><p>SentenceTransformers and FAISS as a basis for exploring semantic similarity, document retrieval, and evidence-grounded generation.</p></article><article class="item"><h3><a href="misinformation.html">Linguistic markers of misinformation</a></h3><p>A collaborative study of political misinformation using LIAR, TF-IDF and Random Forest classification, and VADER / DistilBERT sentiment analysis.</p></article></section>
-<section><div class="section-heading"><h2>Recent writing &amp; notes</h2><a href="writing.html">Writing →</a></div><ul class="writing-list"><li><a href="quantifier-scope.html">Quantifier scope across languages</a><span>Research sketch</span></li><li><a href="between-languages.html">Moving between languages</a><span>Personal essay</span></li><li><a href="instructions.html">When instructions leave too much unsaid</a><span>Communication note</span></li></ul></section>
-<p class="end-links"><a href="https://github.com/pengleee">GitHub</a><a href="cv.html">CV overview</a><a href="mailto:pengleee@outlook.com">pengleee@outlook.com</a></p></main>
+  <main id="main">
+<img class="profile-photo" src="assets/peng-li.jpeg" alt="Portrait of Peng Li outdoors" width="180" height="180">
+<h1>Peng Li</h1>
+<p class="dek">Language, meaning, and computation.</p>
+<div class="bio">
+<p>I work on formal semantics, pragmatics, and psycholinguistics, and on how the methods of these fields can be used to evaluate language models. My current project asks how discourse context shifts the interpretation of quantifier-scope ambiguity — sentences like <em>Every kid climbed a tree</em>, which can describe one tree or several.</p>
+<p>I hold a B.S. in Data Science and Big Data Technology from The Chinese University of Hong Kong, Shenzhen (2024), with visiting study at the University of Bristol and an ACP certificate in Data Science from UC Irvine. From August 2024 to February 2026 I took graduate coursework in Data Science and Analytics at Georgetown University, including computational linguistics and NLP, and was a teaching assistant for Advanced NLP.</p>
+</div>
+
+<section>
+<h2>Current research</h2>
+<article class="item">
+<h3><a href="scopeshift.html">ScopeShift: preceding questions and scope-ambiguous sentences</a></h3>
+<p class="meta">Independent research · July 2026 – present · manuscript in preparation</p>
+<p>Holding <em>Every kid climbed a tree</em> constant, I vary the question it answers and measure whether a language model expects the next sentence to mention <em>the tree</em> or <em>the trees</em>. In a frozen confirmation study with 120 new items and three open-weight models, a question about a shared object shifted the expectation toward the singular in every model, by a seventh to a third of the effect of stating the number outright. What the shift says about scope assignment itself is left open.</p>
+</article>
+</section>
+
+<section>
+<div class="section-heading"><h2>Course projects</h2><a href="projects.html">All projects →</a></div>
+<article class="item"><h3><a href="rag.html">End-to-end retrieval-augmented generation</a></h3><p>A three-person team system for document-grounded question answering: dense retrieval with FAISS, cross-encoder reranking, document upload, and source attribution. Advanced NLP, Fall 2024.</p></article>
+<article class="item"><h3><a href="misinformation.html">Linguistic markers of misinformation</a></h3><p>Lexical, syntactic, and sentiment features of fact-checked political statements, and why surface cues classify them poorly. Data Science and Analytics, Fall 2024.</p></article>
+</section>
+
+<section>
+<div class="section-heading"><h2>Writing</h2><a href="writing.html">All writing →</a></div>
+<ul class="refs">
+<li><a href="quantifier-scope.html">Quantifier scope across languages</a> <span class="meta">· research sketch</span></li>
+<li><a href="between-languages.html">Moving between languages</a> <span class="meta">· essay</span></li>
+</ul>
+</section>
+  </main>
 </div>
 <script src="script.js" defer></script>
 </body>

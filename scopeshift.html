@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScopeShift — Peng Li</title>
+  <meta name="description" content="ScopeShift: preceding questions shift continuation preferences after scope-ambiguous sentences in language models. Design, confirmatory results, and limitations.">
+  <link rel="canonical" href="https://pengleee.github.io/scopeshift.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ScopeShift — Peng Li">
+  <meta property="og:description" content="ScopeShift: preceding questions shift continuation preferences after scope-ambiguous sentences in language models. Design, confirmatory results, and limitations.">
+  <meta property="og:url" content="https://pengleee.github.io/scopeshift.html">
+  <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="wordmark" href="index.html">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a>
+<a href="research.html" aria-current="page">Research</a>
+<a href="projects.html">Projects</a>
+<a href="writing.html">Writing</a>
+<a href="cv.html">CV</a></nav>
+    <div class="contact"><a href="mailto:pengleee@outlook.com">Email</a><a href="https://github.com/pengleee">GitHub</a><a href="https://orcid.org/0009-0001-5334-7118">ORCID</a><a href="assets/Peng_Li_CV.pdf">CV (PDF)</a></div>
+  </aside>
+  <main id="main">
+<h1>ScopeShift</h1>
+<p class="dek">Preceding questions shift continuation preferences after scope-ambiguous sentences in language models</p>
+<p class="meta">Independent research · July 2026 – present · manuscript in preparation, not yet peer reviewed</p>
+
+<section>
+<h2>The question</h2>
+<div class="example">
+<p>Every kid climbed a tree.</p>
+<dl>
+<dt>Surface scope (every &gt; a)</dt><dd>Each kid climbed some tree, possibly a different one.</dd>
+<dt>Inverse scope (a &gt; every)</dt><dd>There is one tree that every kid climbed.</dd>
+</dl>
+</div>
+<p>Human readers tend to prefer the co-varying construal for this construction, but the preference varies by item and can be shifted by what comes before the sentence (Kurtzman &amp; MacDonald 1993; Dwivedi 2013). Question-based theories of discourse predict that a hearer prefers the reading that answers the question under discussion (Roberts 2012). If a language model builds context-sensitive interpretations, a question that puts a shared object at issue should move its expectations toward one tree.</p>
+</section>
+
+<section>
+<h2>Design</h2>
+<p>Each trial is a short dialogue. Dana asks a question; Lee answers with the fixed target sentence. I then read off the model's next-token probabilities for the start of the following sentence and compute the log-odds of <em>The tree was</em> against <em>The trees were</em>. The singular presupposes one climbed tree; the plural, several.</p>
+<div class="callout">
+<p><strong>Distributive question (D):</strong> <em>Did each of the kids climb something at recess?</em><br>
+<strong>Shared-object question (S):</strong> <em>Was there something that each of the kids climbed at recess?</em><br>
+<strong>Lee:</strong> <em>Every kid climbed a tree.</em> The …</p>
+</div>
+<ul>
+<li><strong>Matched questions.</strong> D and S use the same content words, never mention the object, and differ in the order of the quantifier and the indefinite; two wordings of each. Noun-number priming cannot produce the contrast.</li>
+<li><strong>Controls.</strong> A neutral question; the same questions asked and answered earlier about another event (a second discourse configuration); explicit contexts that state the number of objects; and control sentences with <em>the same tree</em> and <em>a different tree</em>, whose construal is fixed lexically.</li>
+<li><strong>Procedure.</strong> A pilot on 8 development items with admission criteria fixed in advance, then a confirmation study on 120 new items with the analysis frozen before any confirmation trial: 15,120 scored trials across three quantized open-weight models (Llama 3 8B, Qwen2.5 7B, Gemma 3 12B), run locally through llama.cpp, in plain-text and chat formats.</li>
+</ul>
+</section>
+
+<section>
+<h2>Primary result</h2>
+<p>The shared-object question raised the singular log-odds relative to the matched distributive question in all three models.</p>
+<div class="table-wrap">
+<table>
+<caption>Plain-text format, all 120 confirmation items. Effect in nats with 95% interval over items; Holm-adjusted p &lt; .001 for each model. Last column: the effect as a share of the effect of stating the number outright.</caption>
+<thead><tr><th scope="col">Model</th><th scope="col">S − D effect</th><th scope="col">Items &gt; 0</th><th scope="col">vs. explicit</th></tr></thead>
+<tbody>
+<tr><td>Llama 3 8B</td><td>+0.96 [+0.77, +1.15]</td><td>98 / 120</td><td>33%</td></tr>
+<tr><td>Qwen2.5 7B</td><td>+0.39 [+0.25, +0.54]</td><td>82 / 120</td><td>14%</td></tr>
+<tr><td>Gemma 3 12B</td><td>+0.47 [+0.28, +0.66]</td><td>84 / 120</td><td>19%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">A rerun on a different numerical back end gave the same pattern (+0.96, +0.38, +0.44).</p>
+</section>
+
+<section>
+<h2>What the controls limit</h2>
+<ul>
+<li><strong>The question need not be live.</strong> The same contrast appears when the question was asked and answered earlier about a different event. In plain text it is larger in the live configuration only for Llama 3; for Qwen2.5 and Gemma 3 the two are the same size. The configurations differ in several ways, so the study does not isolate an effect of the question under discussion.</li>
+<li><strong>The measure is an imperfect proxy.</strong> Sentences with <em>the same</em> always score above sentences with <em>a different</em>, for every item under every question. But in every model some sentences that say the objects differ are still followed more probably by the singular — in the chat format mostly after the shared-object question.</li>
+<li><strong>One model's effect is fragile.</strong> Scoring only the noun, without <em>was/were</em>, leaves Gemma 3's effect indistinguishable from zero (+0.13 [−0.07, +0.33]; an unplanned analysis).</li>
+<li><strong>Not claimed:</strong> a syntactic scope derivation, human-like processing, or generalization beyond one English construction and three quantized models. Whether the shift reflects scope assignment, rather than expectations about how many objects are involved, cannot be decided with this construction.</li>
+</ul>
+</section>
+
+<section>
+<h2>Relation to recent work</h2>
+<p>Kamath et al. (2024) studied scope ambiguity in language models, including with continuation-based measures; Kim et al. (2026), Fang et al. (2026), and Kosterna et al. (2026) study context, depicted situations, and lexical cues in model scope disambiguation. ScopeShift differs in using contexts that are questions — which assert nothing about the situation and share their content words across conditions — in measuring the continuation after the sentence rather than the sentence itself, and in adding a configuration in which the sentence does not answer the question.</p>
+</section>
+
+<section>
+<h2>Materials</h2>
+<p>Items, code, raw trial records with hashes, and the analysis log are kept in a private repository while the manuscript is in preparation. I am glad to share them on request: <a href="mailto:pengleee@outlook.com">pengleee@outlook.com</a>.</p>
+</section>
+
+<section>
+<h2>References</h2>
+<ul class="refs">
+<li>Dwivedi, V. D. (2013). Interpreting quantifier scope ambiguity: Evidence of heuristic first, algorithmic second processing. <em>PLoS ONE</em>, 8(11), e81461.</li>
+<li>Fang, S., Li, Y., &amp; Cong, Y. (2026). Semantic capacity in language learners and LLMs: A case study of quantifier scope. <em>Proceedings of LREC 2026</em>.</li>
+<li>Kamath, G., Schuster, S., Vajjala, S., &amp; Reddy, S. (2024). Scope ambiguities in large language models. <em>Transactions of the ACL</em>, 12.</li>
+<li>Kim, J., Park, S., Lee, K., &amp; Na, S.-H. (2026). Do language models understand implicit logical meaning? A case study of scope ambiguity resolution in context. <em>Proceedings of EMNLP 2026</em>.</li>
+<li>Kosterna, J., et al. (2026). Disentangling form and world knowledge in LLM interpretation: Evidence from quantifier scope disambiguation. <em>Findings of EMNLP 2026</em>.</li>
+<li>Kurtzman, H. S., &amp; MacDonald, M. C. (1993). Resolution of quantifier scope ambiguities. <em>Cognition</em>, 48(3), 243–279.</li>
+<li>Roberts, C. (2012). Information structure in discourse: Towards an integrated formal theory of pragmatics. <em>Semantics and Pragmatics</em>, 5(6), 1–69.</li>
+</ul>
+</section>
+<p><a href="research.html">← Research</a></p>
+  </main>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
