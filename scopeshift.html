@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ScopeShift — Peng Li</title>
-  <meta name="description" content="ScopeShift: preceding questions shift continuation preferences after scope-ambiguous sentences in language models. Design, confirmatory results, and limitations.">
+  <meta name="description" content="ScopeShift: preceding questions shift continuation preferences after scope-ambiguous sentences in language models. Manuscript, design, results of two experiments, and limitations.">
   <link rel="canonical" href="https://pengleee.github.io/scopeshift.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ScopeShift — Peng Li">
-  <meta property="og:description" content="ScopeShift: preceding questions shift continuation preferences after scope-ambiguous sentences in language models. Design, confirmatory results, and limitations.">
+  <meta property="og:description" content="ScopeShift: preceding questions shift continuation preferences after scope-ambiguous sentences in language models. Manuscript, design, results of two experiments, and limitations.">
   <meta property="og:url" content="https://pengleee.github.io/scopeshift.html">
   <meta property="og:image" content="https://pengleee.github.io/assets/peng-li.jpeg">
   <meta name="twitter:card" content="summary">
@@ -34,7 +34,10 @@
       <div class="lede">
         <h1>ScopeShift</h1>
         <p class="dek">Preceding questions shift continuation preferences after scope-ambiguous sentences in language models</p>
-        
+        <div class="bio">
+          <p class="small">Peng Li · Manuscript in preparation, November 2026 · not peer reviewed</p>
+          <div class="cv-actions"><a class="button" href="assets/Li_2026_ScopeShift.pdf">Read the paper (PDF)</a></div>
+        </div>
       </div>
     </div>
 
@@ -42,11 +45,11 @@
       <h2 class="label">Overview</h2>
       <div class="body">
         <dl class="facts">
-          <dt>Status</dt><dd><span class="meta"><span class="status">Manuscript in preparation</span></span>, not yet peer reviewed</dd>
+          <dt>Status</dt><dd><span class="meta"><span class="status">Manuscript in preparation</span></span>, not yet peer reviewed · <a href="assets/Li_2026_ScopeShift.pdf">PDF</a></dd>
           <dt>Period</dt><dd>July 2026 – present</dd>
-          <dt>Items</dt><dd>8 development items (pilot); 120 new items (confirmation)</dd>
+          <dt>Items</dt><dd>Experiment 1: 8 development items (pilot), 120 new items (confirmation). Experiment 2: 200 further new items</dd>
           <dt>Models</dt><dd>Llama 3 8B · Qwen2.5 7B · Gemma 3 12B (quantized, open-weight)</dd>
-          <dt>Materials</dt><dd>Private while in preparation; <a href="mailto:pengleee@outlook.com">available on request</a></dd>
+          <dt>Materials</dt><dd>Private for now; <a href="mailto:pengleee@outlook.com">available on request</a></dd>
         </dl>
       </div>
     </section>
@@ -104,13 +107,33 @@
     </section>
 
     <section class="row">
-      <h2 class="label"><span class="n">IV</span>What the controls limit</h2>
+      <h2 class="label"><span class="n">IV</span>Does the question have to be open?</h2>
+      <div class="body">
+        <p>Experiment 2, designed and frozen after Experiment 1, keeps the question, its event, its position and the reply fixed, and varies only whether Dana still wants an answer. After asking, she either adds <em>I would like an answer to that question, so tell me</em> (live) or <em>Forget that question and just tell me what happened</em> (replaced); at a longer lag, a short side exchange comes first. The quantity tested is the S − D contrast after a live question minus the same contrast after a replaced one.</p>
+        <p>All three models register the withdrawal: a <em>Yes</em> or <em>No</em> reply becomes 1.7 to 2.6 nats less probable. Yet most of the contrast survives it, at 0.78, 1.08 and 0.83 times the live contrast.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Plain-text format, 200 new items, averaged over two lags and two wordings. Live minus replaced contrast in nats with 95% interval over items; the equivalence bound is half of each model’s Experiment 1 effect, capped at 0.4. The six tests form one Holm family.</caption>
+            <thead><tr><th scope="col">Model</th><th scope="col" class="num">Live − replaced</th><th scope="col" class="num">Items &gt; 0</th><th scope="col" class="num">Bound</th><th scope="col">Outcome</th></tr></thead>
+            <tbody>
+              <tr><td>Llama 3 8B</td><td class="num">+0.28 [+0.20, +0.36]</td><td class="num">148 / 200</td><td class="num">±0.40</td><td>Status effect, within bound</td></tr>
+              <tr><td>Qwen2.5 7B</td><td class="num">−0.03 [−0.09, +0.03]</td><td class="num">89 / 200</td><td class="num">±0.20</td><td>Equivalent to zero</td></tr>
+              <tr><td>Gemma 3 12B</td><td class="num">+0.14 [+0.02, +0.25]</td><td class="num">112 / 200</td><td class="num">±0.23</td><td>Inconclusive</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label"><span class="n">V</span>What the controls limit</h2>
       <div class="body">
         <ul>
-          <li><strong>The question need not be live.</strong> The same contrast appears when the question was asked and answered earlier about a different event. In plain text it is larger in the live configuration only for Llama 3; for Qwen2.5 and Gemma 3 the two are the same size. The configurations differ in several ways, so the study does not isolate an effect of the question under discussion.</li>
+          <li><strong>The question need not be live.</strong> The same contrast appears when the question was asked and answered earlier about a different event. In plain text it is larger in the live configuration only for Llama 3; for Qwen2.5 and Gemma 3 the two are the same size. The configurations differ in several ways, which is why Experiment 2 varies the question’s status alone.</li>
+          <li><strong>The unambiguous reply moves too.</strong> In a post hoc comparison, the question shifts the continuation after <em>Every kid climbed the same tree</em> by a similar amount (Llama 3) or a larger one (Gemma 3) than after the ambiguous reply; only for Qwen2.5 is the ambiguous contrast larger.</li>
           <li><strong>The measure is an imperfect proxy.</strong> Sentences with <em>the same</em> always score above sentences with <em>a different</em>, for every item under every question. But in every model some sentences that say the objects differ are still followed more probably by the singular — in the chat format mostly after the shared-object question.</li>
           <li><strong>One model’s effect is fragile.</strong> Scoring only the noun, without <em>was/were</em>, leaves Gemma 3’s effect indistinguishable from zero (+0.13 [−0.07, +0.33]; an unplanned analysis).</li>
-          <li><strong>Not claimed:</strong> a syntactic scope derivation, human-like processing, or generalization beyond one English construction and three quantized models. Whether the shift reflects scope assignment, rather than expectations about how many objects are involved, cannot be decided with this construction.</li>
+          <li><strong>Not claimed:</strong> a syntactic scope derivation, human-like processing, or generalization beyond one English construction and three quantized models. The results are consistent with question-driven scope selection but diagnose neither it nor an active question under discussion; whether the shift reflects scope assignment, rather than expectations about how many objects are involved, cannot be decided with this construction.</li>
         </ul>
       </div>
     </section>
@@ -125,7 +148,7 @@
     <section class="row">
       <h2 class="label">Materials</h2>
       <div class="body">
-        <p>Items, code, raw trial records with hashes, and the analysis log are kept in a private repository while the manuscript is in preparation. I am glad to share them on request: <a href="mailto:pengleee@outlook.com">pengleee@outlook.com</a>.</p>
+        <p>The paper is available as a <a href="assets/Li_2026_ScopeShift.pdf">PDF</a> (15 pages, with appendices). Items, code, raw trial records with hashes, and the analysis log are kept in a private repository for now. I am glad to share them on request: <a href="mailto:pengleee@outlook.com">pengleee@outlook.com</a>.</p>
       </div>
     </section>
 

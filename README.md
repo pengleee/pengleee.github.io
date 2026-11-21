@@ -28,4 +28,8 @@ node tests/site.test.mjs
 
 The source of truth for the CV is the separate `pengli-cv` repository. `cv.html` mirrors it without phone numbers. After changing `cv.html`, regenerate the PDF by printing the page (Chrome: Print → Save as PDF, Letter, default margins) to `assets/Peng_Li_CV.pdf`.
 
+## ScopeShift paper
+
+`assets/Li_2026_ScopeShift.pdf` is a byte-for-byte copy of `paper/main.pdf` on the `master` branch of the private ScopeShift repository (the signed `preprint` build, not the anonymous `scopeshift-acl` review copy). Replace it whenever that PDF is rebuilt, and update the summary on `scopeshift.html` to match.
+
 ScopeShift's repository is private; summarise its results on the site but do not link to it.
