@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linguistic markers of misinformation — Peng Li</title>
+  <meta name="description" content="A DSAN 5000 course project at Georgetown University: six-way truthfulness classification of LIAR’s fact-checked political statements, with part-of-speech and sentiment comparisons.">
+  <link rel="canonical" href="https://pengleee.github.io/projects/misinformation.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Linguistic markers of misinformation — Peng Li">
+  <meta property="og:description" content="A DSAN 5000 course project at Georgetown University: six-way truthfulness classification of LIAR’s fact-checked political statements, with part-of-speech and sentiment comparisons.">
+  <meta property="og:url" content="https://pengleee.github.io/projects/misinformation.html">
+  <meta property="og:image" content="https://pengleee.github.io/assets/img/peng-li.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("theme");if(t=="light"||t=="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page">
+  <header class="masthead">
+    <a class="name" href="/">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="/">Home</a>
+<a href="/projects/" aria-current="page">Projects</a>
+<a href="/writing/">Writing</a>
+<a href="/assets/Peng_Li_CV.pdf">CV</a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch colour theme"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </header>
+  <main id="main">
+<div class="intro">
+      <p class="kicker">Course project · Fall 2024</p>
+      <div class="lede">
+        <h1>Linguistic markers of misinformation</h1>
+        <p class="dek">Do lexical patterns, syntactic features, and sentiment help distinguish misinformation from credible political content?</p>
+        
+      </div>
+    </div>
+
+    <section class="row">
+      <h2 class="label">Overview</h2>
+      <div class="body">
+        <dl class="facts">
+          <dt>Course</dt><dd>DSAN 5000, Georgetown University, Fall 2024</dd>
+          <dt>With</dt><dd>Jonah Lichtenthal</dd>
+          <dt>Data</dt><dd>LIAR: 10,240 short political statements fact-checked by PolitiFact (the dataset’s training file, split 70/30 for this project). News articles gathered through News API, Media Cloud and the All the News dataset were used for exploration only.</dd>
+          <dt>Materials</dt><dd><p class="links"><a href="https://github.com/pengleee/identify-misinformation-in-political-news">Repository</a><a href="https://pengli.georgetown.domains/proj5000/report/5000-Project-Report.pdf">Project report (PDF)</a><a href="https://pengli.georgetown.domains/proj5000/">Project website</a></p></dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">Methods</h2>
+      <div class="body">
+        <ul>
+          <li><strong>Classification</strong> — a Random Forest on 1,000 TF-IDF word features, predicting LIAR’s six truthfulness labels.</li>
+          <li><strong>Linguistic analysis</strong> — part-of-speech counts compared across labels, and the words the classifier relied on most.</li>
+          <li><strong>Sentiment</strong> — VADER and a DistilBERT sentiment model, compared across truthfulness labels.</li>
+          <li><strong>Exploratory structure</strong> — topic modeling and dimensionality reduction, including NMF and t-SNE.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">Results and limitations</h2>
+      <div class="body">
+        <div class="figures">
+          <div><b>23%</b><span>accuracy</span></div>
+          <div><b>0.22</b><span>macro F1</span></div>
+          <div><b>22%</b><span>majority-label baseline</span></div>
+          <div><b>3,072</b><span>test statements</span></div>
+        </div>
+        <p>On 3,072 held-out statements the classifier reached 23% accuracy and a macro F1 of 0.22. Always predicting <em>half-true</em>, the most frequent label, scores 22% on the same split, so the word features add almost nothing. Part-of-speech counts showed no clear relation to the labels, and sentiment was compared across labels in count plots without a statistical test.</p>
+        <p>Patterns tied to dataset labels do not show whether an unfamiliar claim is true, and short statements are not news articles.</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">My contribution</h2>
+      <div class="body">
+        <p>In a team of two, I collected the data (News API, Media Cloud, All the News and LIAR) and wrote configurable news-gathering functions, built and evaluated the classifier, ran the part-of-speech and sentiment analyses and part of the exploratory analysis, wrote the report’s supervised learning, results and conclusion sections, and organized the project website. Jonah Lichtenthal did the data cleaning and topic modeling and wrote the remaining sections.</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2 class="label">What it led to</h2>
+      <div class="body">
+        <p>The project sharpened a question I now pursue directly: what a measurable textual pattern shows about meaning, and what further evidence an interpretation needs.</p>
+        <p class="back"><a href="/projects/">← Projects</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="colophon"><p class="tagline">Language, a bridge between the minds we inhabit and the minds we build.</p><p>© 2026 Peng Li · Last updated <time datetime="2026-11-27">27 November 2026</time></p></footer>
+</div>
+<script src="/assets/js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chained in Markov Chain — Peng Li</title>
+  <meta name="description" content="Revising for a database exam, I found everything chained in a Markov chain: what the Markov property means, the consolation and warning it offers learners, and life as a chain of states.">
+  <link rel="canonical" href="https://pengleee.github.io/writing/markov-chain.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-10-24">
+  <meta property="og:title" content="Chained in Markov Chain — Peng Li">
+  <meta property="og:description" content="Revising for a database exam, I found everything chained in a Markov chain: what the Markov property means, the consolation and warning it offers learners, and life as a chain of states.">
+  <meta property="og:url" content="https://pengleee.github.io/writing/markov-chain.html">
+  <meta property="og:image" content="https://pengleee.github.io/assets/img/peng-li.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("theme");if(t=="light"||t=="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page">
+  <header class="masthead">
+    <a class="name" href="/">Peng Li</a>
+    <nav aria-label="Main navigation"><a href="/">Home</a>
+<a href="/projects/">Projects</a>
+<a href="/writing/" aria-current="page">Writing</a>
+<a href="/assets/Peng_Li_CV.pdf">CV</a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch colour theme"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </header>
+  <main id="main">
+<div class="intro">
+      <p class="kicker">Essay</p>
+      <div class="lede">
+        <h1>Chained in Markov Chain</h1>
+        <p class="small dateline"><time datetime="2022-10-24">24 October 2022</time></p>
+      </div>
+    </div>
+    <article class="row">
+      <div class="toc-col"><nav class="toc" aria-label="Sections"><details open><summary>Contents</summary><ol>
+<li><a href="#what-a-markov-chain-is">What a Markov chain is</a></li>
+<li><a href="#learning-as-a-chain">Learning as a chain</a></li>
+<li><a href="#everything-is-a-chain">Everything is a chain</a></li>
+<li><a href="#one-link">One link</a></li>
+</ol></details></nav></div>
+      <div class="prose">
+<p>Today, while revising for my database course, I was reading about relational schema design, the rules for splitting data into tables so that nothing is stored twice. In the middle of it my mind jumped somewhere else entirely: to the Markov chains I had been “previewing” a few days earlier for my stochastic processes course. And a phrase arrived, more or less on its own: <em>Chained in Markov Chain</em>.</p>
+<h2 id="what-a-markov-chain-is">What a Markov chain is</h2>
+<p>A Markov chain is a way of describing something that moves between states, one step at a time, with some randomness in each step. The weather can be modelled like this: today is sunny, rainy or cloudy, and each kind of day has certain chances of being followed by each of the others. So can a board game like Snakes and Ladders, where the square you land on next depends on your current square and a roll of the dice.</p>
+<p>The defining feature, called the Markov property, is that the next step depends only on where you are now. It does not matter how you got there. If you are on square 47, the chance of reaching square 52 on your next roll is the same whether you climbed a ladder to get there or slid down a snake. The chain has no memory of its own history. Everything relevant about the past is already contained in the present state.</p>
+<p>The idea is named after the Russian mathematician Andrey Markov, who, a little over a century ago, tested it on poetry. He went through the opening of Pushkin’s <em>Eugene Onegin</em> letter by letter and counted how often a vowel was followed by a vowel or by a consonant, and how often a consonant was followed by each. The chance of the next letter turned out to depend heavily on the letter just before it. A chain that started with a page of verse has since been used to model queues, genes, stock prices and the spread of diseases.</p>
+<h2 id="learning-as-a-chain">Learning as a chain</h2>
+<p>What I had in mind, sitting over my database notes, was that everything we had been taught before the midterm is just one state after another on a Markov chain. Each topic builds on the one before it. Learning one state well makes the next easier to master.</p>
+<p>The Markov property offers two lessons from there, a consolation and a warning.</p>
+<p>The consolation: if you have not learned well for a long time, there is no need to despair over the backlog. The current state depends only on the state next to it. What matters now is where you are and the step you take next, not every chapter you skipped along the way. You don’t need to repay the whole past before you can move forward.</p>
+<p>The warning runs the other way. If you are in a good state now, don’t be giddy with joy. A present advantage only affects the next step, and what comes after is still unknown. A good week buys you a good starting point for the following week, and nothing beyond that.</p>
+<p>Both lessons come from the same place. A chain with no memory neither punishes you forever for a bad stretch nor protects you forever after a good one. It only ever asks one question: where are you now?</p>
+<h2 id="everything-is-a-chain">Everything is a chain</h2>
+<p>Once I started thinking this way, it was hard to stop. If the accumulation of learning is a Markov chain, then by extension everything is bound up in one. It is a law of nature, a model as old as time.</p>
+<p>The theory even comes with a vocabulary that sounds like a description of a life. States can be <strong>transient</strong>, meaning that once you leave you may never come back, or <strong>recurrent</strong>, meaning that you are certain to return sooner or later. A group of recurrent states that keeps sending you back to each other is called a recurrent class. Chains can be <strong>irreducible</strong>, when every state can eventually be reached from every other; <strong>aperiodic</strong>, when returns do not follow a fixed rhythm; and <strong>ergodic</strong>, when, given enough time, the chain explores its whole space in a stable way.</p>
+<p>To be stuck forever in some recurrent class, cycling round, seeing the same few things over and over, would be a terrible thing. It is the mathematical picture of a rut. But life, on the whole, is ever-changing and endlessly varied. It moves through more states than anyone could list. I don’t ask to visit every one of them. I only ask to experience them as I pass through.</p>
+<h2 id="one-link">One link</h2>
+<p>And then the phrase turns back on itself. This thought, arriving in the middle of database revision, is also just a state that followed the state before it. Thinking about Markov chains is itself one step in a Markov chain.</p>
+<p>A Markov chain is itself one link in a Markov chain.</p>
+        <p class="back"><a href="/writing/">← Writing</a></p>
+      </div>
+    </article>
+  </main>
+  <footer class="colophon"><p class="tagline">Language, a bridge between the minds we inhabit and the minds we build.</p><p>© 2026 Peng Li · Last updated <time datetime="2026-11-27">27 November 2026</time></p></footer>
+</div>
+<script src="/assets/js/script.js" defer></script>
+</body>
+</html>
